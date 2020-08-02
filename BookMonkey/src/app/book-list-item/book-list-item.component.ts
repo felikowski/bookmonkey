@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Book } from '../shared/book';
 
 @Component({
@@ -9,6 +9,7 @@ import { Book } from '../shared/book';
 export class BookListItemComponent implements OnInit {
 
   @Input() book: Book;
+
   constructor() { }
 
   ngOnInit(): void {
