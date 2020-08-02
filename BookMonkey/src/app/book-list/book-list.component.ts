@@ -12,10 +12,6 @@ export class BookListComponent implements OnInit {
 
   constructor(private bs: BookStoreService) { }
 
-  @Output() showDetailsEvent = new EventEmitter<Book>();
-  showDetails(book: Book) {
-    this.showDetailsEvent.emit(book);
-  }
   ngOnInit() {
     this.books = this.bs.getAll();
   }

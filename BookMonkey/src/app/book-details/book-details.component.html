@@ -27,5 +27,5 @@
     <div class="ui small images">
         <img *ngFor="let thumbnail of book.thumbnails" [src]="thumbnail.url">
     </div>
-    <button class="ui green button" (click)="showBookList()">Zurück zur Buchliste</button>
+    <a routerLink="/books" class="ui yellow button">Zurück</a>
 </div>
