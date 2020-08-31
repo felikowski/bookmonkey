@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { BookFactory } from '../shared/book-factory';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {BookFactory} from '../shared/book-factory';
+import {Book} from '../shared/book';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'bm-book-form',
@@ -9,7 +11,19 @@ import { BookFactory } from '../shared/book-factory';
 export class BookFormComponent implements OnInit {
 
   book = BookFactory.empty();
-  constructor() { }
+
+  @Output() submitBook = new EventEmitter<Book>();
+  @ViewChild('bookForm') bookForm: NgForm;
+
+  submitForm() {
+    this.submitBook.emit(this.book);
+
+    this.book = BookFactory.empty();
+    this.bookForm.reset();
+  }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
