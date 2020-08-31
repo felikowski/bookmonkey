@@ -17,8 +17,8 @@ export class FormMessagesComponent implements OnInit {
     },
     isbn: {
       required: 'Es muss eine ISBN angegeben werden.',
-      minLength: 'Die ISBN muss mindestens 10 Zeichen haben.',
-      maxLength: 'Die ISBN darf höchstens 13 Zeichen haben.'
+      minlength: 'Die ISBN muss mindestens 10 Zeichen haben.',
+      maxlength: 'Die ISBN darf höchstens 13 Zeichen haben.'
     },
     published: {
       required: 'Es muss ein Erscheinungsdatum angegeben werden.'
